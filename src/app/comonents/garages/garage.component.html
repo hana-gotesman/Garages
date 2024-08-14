@@ -1,0 +1,28 @@
+
+ 
+
+<div style="direction: rtl">
+  <div class="search-select">
+    <select (change)="filterByArea($event)" ng-model="area" convert-to-number>
+      <option *ngFor="let area of areas" value="{{area}}">{{area}}</option>
+    </select>
+  </div>
+  <div class="search-text">
+    <input style="width: 100%" [placeholder]="placeholder" name="search" [(ngModel)]="searchText"
+      (keyup)="filterByName()" autocomplete="off" placeholder="&#61442;  הזן שם עיר">
+  </div>
+
+  <mat-spinner *ngIf="!garages || garages.count<1"></mat-spinner>
+  <mat-card class="example-card" appearance="outlined" *ngFor="let garage of garages">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{garage.name}}</mat-card-title>
+        <mat-card-subtitle>{{garage.address}} , {{garage.city}}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      אזור: {{garage.area}}
+      טלפון: {{garage.phoneNumber}}
+    </mat-card-content>
+  </mat-card>
+</div>
