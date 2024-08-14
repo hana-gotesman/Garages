@@ -45,8 +45,8 @@ export class GarageComponent {
        this.filterByArea();
       }
     )
-    this.garages =this.garageService.gatAllGarages(city)
-     this.onSortByName();
+    // this.garages =this.garageService.gatAllGarages(city)
+    //  this.onSortByName();
   }
 
   gatAllAreas() {
@@ -55,7 +55,7 @@ export class GarageComponent {
         this.areas =res.Data;
       }
     )
-    this.areas=this.garageService.gatAllAreas();
+    // this.areas=this.garageService.gatAllAreas();
   }
 
   filterByName(){

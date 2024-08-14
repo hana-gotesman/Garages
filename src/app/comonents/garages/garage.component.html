@@ -12,7 +12,7 @@
       (keyup)="filterByName()" autocomplete="off" placeholder="&#61442;  הזן שם עיר">
   </div>
 
-  <mat-spinner *ngIf="!garages || garages.count<1"></mat-spinner>
+  <mat-spinner *ngIf="!garages || garages.length < 1"></mat-spinner>
   <mat-card class="example-card" appearance="outlined" *ngFor="let garage of garages">
     <mat-card-header>
       <mat-card-title-group>
